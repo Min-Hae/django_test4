@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자료</title>
+</head>
+<body>
+{# Django의 template Language 사용#}
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% if articles.count > 0 %}
+	{% for a in articles %}
+	<b>{{a.code}}</b>{{a.name}} {{a.price}} {{a.pub_date}}<br>	
+	{% endfor %}
+{% else %}
+<p>자료가 없어요</p>
+{% endif %}
+
+{% endblock %}
+</body>
+</html>
